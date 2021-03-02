@@ -1,4 +1,5 @@
-﻿using MyEcomDemoShop.Core.Models;
+﻿using MyEcomDemoShop.Core.Contracts;
+using MyEcomDemoShop.Core.Models;
 using MyEcomDemoShop.Core.ViewModels;
 using MyEcomDemoShop.DataAccess.InMemory;
 using System;
@@ -11,13 +12,13 @@ namespace MyEcomDemoShop.WebUI.Controllers
 {
     public class ProductManagerController : Controller
     {
-        InMemoryRepository<Product> context;
-        InMemoryRepository<ProductCategory> productCategories;
+        IRepository<Product> context;
+        IRepository<ProductCategory> productCategories;
 
-        public ProductManagerController()
+        public ProductManagerController(IRepository<Product> context, IRepository<ProductCategory> productCategoryContext)
         {
-            context = new InMemoryRepository<Product>();
-            productCategories = new InMemoryRepository<ProductCategory>();
+            this.context = context;
+            productCategories = productCategoryContext;
         }
 
         // GET: ProductManager
