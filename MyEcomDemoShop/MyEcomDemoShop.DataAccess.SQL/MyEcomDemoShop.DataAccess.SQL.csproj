@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
+    <Compile Include="SQLRepository.cs" />
     <Compile Include="Migrations\202103031827121_Inital.cs" />
     <Compile Include="Migrations\202103031827121_Inital.designer.cs">
       <DependentUpon>202103031827121_Inital.cs</DependentUpon>
