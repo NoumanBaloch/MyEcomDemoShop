@@ -14,6 +14,7 @@ namespace MyEcomDemoShop.Services
     {
         IRepository<Product> productContext;
         IRepository<Basket> basketContext;
+        IRepository<BasketItem> basketItemsContext;
 
         public const string BasketSessionName = "eCommerceBasket";
 
